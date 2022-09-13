@@ -17,6 +17,7 @@ module.exports = {
 	'plugins': [
 		'@typescript-eslint'
 	],
+
 	'rules': {
 		'indent': [
 			'error',
@@ -35,4 +36,5 @@ module.exports = {
 			'always'
 		]
 	}
+
 };
