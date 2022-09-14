@@ -18,11 +18,12 @@ model Course {
   CourseStudent CourseStudent[]
 }
 
-model student {
+model Student {
   id            Int             @id @default(autoincrement())
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
-  studenNumber  String
+  StudentName   String
+  StudentNumber String
   CourseStudent CourseStudent[]
 }
 
@@ -30,9 +31,9 @@ model CourseStudent {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  CourseId  Int
-  StudentId Int
   Course    Course   @relation(fields: [CourseId], references: [id])
-  Student   student  @relation(fields: [StudentId], references: [id])
+  CourseId  Int
+  Student   Student  @relation(fields: [StudentId], references: [id])
+  StudentId Int
   NickName  String
 }
